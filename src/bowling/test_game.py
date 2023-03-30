@@ -78,7 +78,7 @@ class TestGames(unittest.TestCase):
         with self.assertRaises(Exception) as context:
             game.get_game()
 
-        self.assertTrue('Game unfinished' in context.exception)
+        self.assertTrue('Game unfinished', context.exception)
 
 if __name__ == '__main__':
     unittest.main()
