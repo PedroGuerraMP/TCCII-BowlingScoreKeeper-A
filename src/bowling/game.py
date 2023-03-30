@@ -11,9 +11,19 @@ class BowlingGame:
         pass
     
     def add_frame(self, frame: Frame):
-        self.frames.append(frame)
+        if(len(self.frames) < 10):
+            self.frames.append(frame)
+        else: 
+            raise Exception('Game already finished')
         pass
 
+    def get_game(self):
+        if(len(self.frames) == 10):
+            return self.frames
+        else: 
+            raise Exception('Game unfinished')
+            
+    
     def set_bonus(self, first_throw: int, second_throw: int):
         """ The the bonus throw """
         # To be implemented
