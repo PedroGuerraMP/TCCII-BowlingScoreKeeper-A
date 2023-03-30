@@ -7,11 +7,11 @@ class BowlingGame:
     bonus: Frame
 
     def __init__(self):
+        self.frames = []
         pass
     
     def add_frame(self, frame: Frame):
-        frames = [frame]
-        self.frames = frames
+        self.frames.append(frame)
         pass
 
     def set_bonus(self, first_throw: int, second_throw: int):
