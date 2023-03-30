@@ -18,10 +18,9 @@ class BowlingGame:
         pass
 
     def get_game(self):
-        if(len(self.frames) == 10):
-            return self.frames
-        else: 
-            raise Exception('Game unfinished')
+        self.isGameFinished()
+        
+        return self.frames
             
     
     def set_bonus(self, first_throw: int, second_throw: int):
