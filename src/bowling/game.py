@@ -11,7 +11,10 @@ class BowlingGame:
         pass
     
     def add_frame(self, frame: Frame):
-        self.frames.append(frame)
+        if(len(self.frames) < 10):
+            self.frames.append(frame)
+        else: 
+            raise Exception('Game already finished')
         pass
 
     def get_game(self):
