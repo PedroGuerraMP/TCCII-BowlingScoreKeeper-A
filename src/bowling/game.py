@@ -18,10 +18,9 @@ class BowlingGame:
         pass
 
     def get_game(self):
-        if(len(self.frames) == 10):
-            return self.frames
-        else: 
-            raise Exception('Game unfinished')
+        self.isGameFinished()
+        
+        return self.frames
             
     
     def set_bonus(self, first_throw: int, second_throw: int):
@@ -30,11 +29,28 @@ class BowlingGame:
         pass
 
     def score(self) -> int:
-        """ Get the score from the game """
-        # To be implemented
-        pass
+        sum = 0
+
+        self.isGameFinished()
+        last_frame_was_strike: bool = False
+        for frame in self.frames:
+            if(last_frame_was_strike):
+                sum += (frame.score()*2)
+            else:
+                sum += frame.score()
+                
+            last_frame_was_strike = frame.is_strike()
+        
+        return sum       
+        
 
     def is_next_frame_bonus(self) -> bool:
         """ Get if the next frame is bonus """
         # To be implemented
         pass
+    
+    def isGameFinished(self):
+        if(len(self.frames) != 10):
+            raise Exception('Game unfinished')
+        else:
+            pass
