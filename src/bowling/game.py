@@ -4,12 +4,14 @@ from bowling.frame import Frame
 
 
 class BowlingGame:
-    frames: List[Frame]
     bonus: Frame
 
+    def __init__(self):
+        pass
+    
     def add_frame(self, frame: Frame):
-        """ Add a frame to the game """
-        # To be implemented
+        frames = [frame]
+        self.frames = frames
         pass
 
     def set_bonus(self, first_throw: int, second_throw: int):
