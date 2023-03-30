@@ -4,9 +4,7 @@ class Frame:
         self.second_throw = second_throw
 
     def score(self) -> int:
-        """ The score of a single frame """
-        # To be implemented
-        pass
+        return self.first_throw + self.second_throw
 
     def is_strike(self) -> bool:
         """ Return whether the frame is a strike or not """
