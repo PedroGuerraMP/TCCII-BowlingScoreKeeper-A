@@ -14,6 +14,9 @@ class BowlingGame:
         self.frames.append(frame)
         pass
 
+    def get_game(self):
+        return self.frames
+    
     def set_bonus(self, first_throw: int, second_throw: int):
         """ The the bonus throw """
         # To be implemented
