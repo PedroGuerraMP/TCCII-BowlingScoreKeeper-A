@@ -30,9 +30,12 @@ class BowlingGame:
         pass
 
     def score(self) -> int:
-        """ Get the score from the game """
-        # To be implemented
-        pass
+        sum = 0
+        
+        for frame in self.frames:
+            sum += frame.score()
+
+        return sum
 
     def is_next_frame_bonus(self) -> bool:
         """ Get if the next frame is bonus """
