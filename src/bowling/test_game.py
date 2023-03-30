@@ -50,7 +50,7 @@ class TestGames(unittest.TestCase):
         game.add_frame(frame9)
         game.add_frame(frame10)
         
-        self.assertEqual(game.get_game().equals, frameList)        
+        self.assertListEqual(game.get_game(), frameList)        
 
 
 if __name__ == '__main__':
