@@ -31,13 +31,22 @@ class BowlingGame:
 
     def score(self) -> int:
         sum = 0
-        
+
+        self.isGameFinished()
+
         for frame in self.frames:
             sum += frame.score()
-
-        return sum
+        
+        return sum       
+        
 
     def is_next_frame_bonus(self) -> bool:
         """ Get if the next frame is bonus """
         # To be implemented
         pass
+    
+    def isGameFinished(self):
+        if(len(self.frames) != 10):
+            raise Exception('Game unfinished')
+        else:
+            pass
