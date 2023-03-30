@@ -10,7 +10,7 @@ class TestFrames(unittest.TestCase):
         throw2 = 4
         frame = Frame(throw1, throw2)
         
-        self.assertEqual((throw1+throw2), frame.score)
+        self.assertEqual((throw1+throw2), frame.score())
 
 
 
