@@ -7,8 +7,10 @@ class Frame:
         return self.first_throw + self.second_throw
 
     def is_strike(self) -> bool:
-        """ Return whether the frame is a strike or not """
-        # To be implemented
+        if(self.first_throw == 10 and self.second_throw  == 0):
+            return True
+        else:
+            return False
         pass
 
     def is_spare(self) -> bool:

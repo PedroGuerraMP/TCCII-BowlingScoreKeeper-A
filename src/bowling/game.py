@@ -32,9 +32,14 @@ class BowlingGame:
         sum = 0
 
         self.isGameFinished()
-
+        last_frame_was_strike: bool = False
         for frame in self.frames:
-            sum += frame.score()
+            if(last_frame_was_strike):
+                sum += (frame.score()*2)
+            else:
+                sum += frame.score()
+                
+            last_frame_was_strike = frame.is_strike()
         
         return sum       
         
